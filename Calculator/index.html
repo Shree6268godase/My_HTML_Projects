@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <title> CALCULATOR </title>
+
+ <link rel="stylesheet" href="style.css">
+</head>
+ 
+
+<body>
+ 
+<div class="CALCULATOR" >
+ <input type="text" id="display" value="0" disabled>
+
+ <div class="buttons">
+  
+ <button onclick="press('7')"> 7  </button>
+<button onclick="press('8')"> 8 </button>
+<button onclick="press('9')"> 9  </button>
+<button onclick="press('+')"> +  </button>
+
+<button onclick="press('4')"> 4  </button>
+<button onclick="press('5')"> 5  </button>
+<button onclick="press('6')"> 6  </button>
+<button onclick="press('-')"> -  </button>
+
+<button onclick="press('1')"> 1  </button>
+<button onclick="press('2')"> 2  </button>
+<button onclick="press('3')"> 3  </button>
+<button onclick="calculate()"> =  </button>
+
+<button class="clear" onclick="clearDisplay()"> C </button>
+ 
+ </div>
+
+</div>
+
+<script>
+ const display = document.getElementById("display");
+
+  function press(value)
+  {
+   if(display.value ===0 )
+     {
+       display.value=value;
+     }
+   else
+    {
+      display.value += value;
+    }
+   }
+
+  function calculate()
+   {
+     try 
+  	{
+           display.value = eval(display.value);
+         }
+     catch
+         {
+           display.value ="ERROR";
+         }
+     }
+
+     
+    function clearDisplay()
+     {
+       display.value =0 ;
+      }
+
+
+</script>
+</body>
+</html
