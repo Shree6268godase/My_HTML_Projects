@@ -1,0 +1,125 @@
+/* ===== GENERAL ===== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: #1e90ff;
+    color: white;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.menu a {
+    margin: 0 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-buttons button {
+    margin-left: 10px;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+.post {
+    background: #2ecc71;
+    color: white;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 40px;
+    background: linear-gradient(135deg, #1e90ff, #3aa0ff);
+    color: white;
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.job-count {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.hero-text h1 {
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+.sub-text {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.resume-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #2ecc71;
+    border: none;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Hero image box */
+.hero-image .image-box {
+    width: 260px;
+    height: 180px;
+    background: white;
+    border-radius: 10px;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== SEARCH BAR ===== */
+.search-bar {
+    background: white;
+    padding: 20px 40px;
+    display: flex;
+    gap: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.search-bar input,
+.search-bar select {
+    padding: 10px;
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-btn {
+    padding: 10px 20px;
+    background: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
