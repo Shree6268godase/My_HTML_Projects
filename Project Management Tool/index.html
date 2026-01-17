@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Management Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Project Management Tool</h1>
+</header>
+
+<section class="form-section">
+    <h2>Create Task</h2>
+
+    <input type="text" id="project" placeholder="Project Name">
+    <input type="text" id="task" placeholder="Task Name">
+    <input type="date" id="deadline">
+    <select id="status">
+        <option value="Pending">Pending</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+    </select>
+
+    <button onclick="addTask()">Add Task</button>
+</section>
+
+<section class="task-section">
+    <h2>Project Tasks</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Project</th>
+                <th>Task</th>
+                <th>Deadline</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="taskList"></tbody>
+    </table>
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
