@@ -1,0 +1,108 @@
+body {
+
+ font-family: Arial;
+ margin: 0;
+ padding: 0;
+
+ }
+
+.header {
+ 
+  
+  color: black;
+  text-align: center;
+  padding: 30 px;
+
+}
+
+.about {
+ 
+ display: flex;
+ align-items:center;
+ padding: 40 px;
+ background-color: #f4f4f4;
+gap: 20px;
+
+}
+
+.about img {
+
+  width:  170px;
+  height: 160 px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 30 px;
+
+.about text {
+ 
+ max-width :500 px;
+ }
+
+.btn {
+ 
+ display : inline-block;
+ background : blue;
+ color: white;
+ padding: 10px 15px;
+ text-decoration: none;
+ 
+} 
+
+.skills {
+ 
+ padding : 30 px;
+
+}
+ 
+.skills ul li {
+ 
+  font-size : 18 px;
+ 
+ }
+
+
+.contact {
+ 
+ padding : 30px;
+}
+
+
+.footer {
+ 
+ background-color: #333;
+ color : white;
+ text-align: center;
+ padding: 10px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
