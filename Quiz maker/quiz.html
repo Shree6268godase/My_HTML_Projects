@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <title> QUIZ MAKER</title>
+
+ <link rel="stylesheet" href="style.css">
+</head>
+ 
+
+<body>
+
+    <div class="quiz-container">
+        <div id="quizArea">
+       <h2 id="question"> QUESTION TEXT</h2>
+
+       <div class="options">
+        <label > <input type="radio" name="option" value="0"> <span id="opt0"> </span> </label>
+        <label > <input type="radio" name="option" value="1"> <span id="opt1"> </span> </label>
+        <label > <input type="radio" name="option" value="2"> <span id="opt2"> </span> </label>
+        <label > <input type="radio" name="option" value="3"> <span id="opt3"> </span> </label>
+        </div>
+
+        <div class="buttons">
+            <button onclick="prevQuestion()"> Previous </button>
+            <button onclick="nextQuestion()"> Next </button>
+            <button onclick="submitQuiz()"> SUBMIT </button>
+        </div>
+        </div>
+
+        <div id="result"> </div>
+
+    </div>
+
+    <script>
+        const quiz=[
+        {
+            q:"What is HTML?",
+            options:["Programming language","Markup language","Database","OS"],
+            ans:1
+        },
+        
+        {
+            q:"Which tag is used for css?",
+            options:["<css>","<script>","<style>","<link>"],
+            ans:1
+        },
+
+        {
+            q:"javascript is used for ?",
+            options:["Styling","Structure","Interactivity","Database"],
+            ans:2
+        },
+
+        {
+            q:"Which is not a programming language?",
+            options:["Python","Java","HTML","C"],
+            ans:2
+        },
+
+        {
+            q:"Which company developed javascript?",
+            options:["Google","Microsoft","Netscape","Apple"],
+            ans:2
+        }
+        
+        ];
+
+
+        let index = 0;
+        let answers = new Array(quiz.length);
+
+        function loadQuestion()
+        {
+            document.getElementById("question").innerText= quiz[index].q;
+            quiz[index].options.forEach((opt,i)=> { 
+                document.getElementById("opt" +i).innerText =opt;
+            });
+
+            document.querySelectorAll("input[name='option']").forEach(r => {
+                r.checked = answers[index] ==r.value;
+            });
+
+            document.getElementById("SubmitBtn").style.display =index === quiz.length -1 ? "inline-block" : "none";
+        }
+
+        function nextQuestion()
+        {
+            saveAnswer();
+            if(index < quiz.length -1)
+            {
+                index++;
+                loadQuestion();
+            }
+        }
+
+        function prevQuestion()
+        {
+            saveAnswer();
+            if(index > 0)
+            {
+                index--;
+                loadQuestion();
+            }
+        
+        }
+
+        function saveAnswer()
+        {
+            let selected = document.querySelector("input[name='option']:checked");
+            if (selected) answers[index] = parseInt(selected.value);
+        }
+  
+
+function submitQuiz() {
+    saveAnswer();
+
+    let correct = 0;
+    let total = quiz.length;
+    let resultHTML = "";
+
+    quiz.forEach((q, i) => {
+        let userIndex = answers[i];
+        let userAnswer =
+            userIndex !== undefined ? q.options[userIndex] : "Not Answered";
+        let correctAnswer = q.options[q.ans];
+
+        if (userIndex === q.ans) {
+            correct++;
+            resultHTML += `
+                <p>
+                    <b>Q${i + 1}:</b> ${q.q}<br>
+                    <span style="color:green;">✔ User Answer: ${userAnswer}</span>
+                </p>
+            `;
+        } else {
+            resultHTML += `
+                <p>
+                    <b>Q${i + 1}:</b> ${q.q}<br>
+                    <span style="color:red;">✖ User Answer: ${userAnswer}</span><br>
+                    <span style="color:green;">✔ Correct Answer: ${correctAnswer}</span>
+                </p>
+            `;
+        }
+    });
+
+    document.getElementById("quizArea").style.display = "none";
+
+    document.getElementById("result").innerHTML = `
+        <h2>Score: ${correct} / ${total}</h2>
+        <hr>
+        ${resultHTML}
+    `;
+}
+
+
+    loadQuestion();
+    </script>
+
+</body>
+</html>

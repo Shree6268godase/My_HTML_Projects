@@ -1,0 +1,118 @@
+/* ===== Page Background ===== */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1e1e1e;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== Quiz Main Box ===== */
+.quiz-container {
+    width: 90%;
+    max-width: 700px;
+    background: linear-gradient(135deg, #c9f7f2, #a0ede5);
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* ===== Question ===== */
+#question {
+    text-align: center;
+    font-size: 20px;
+    color: #004d4d;
+    margin-bottom: 25px;
+}
+
+/* ===== Options ===== */
+.options label {
+    display: block;
+    background: #ffffff;
+    padding: 14px 18px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    font-size: 15px;
+}
+
+.options label:hover {
+    border-color: #00b3b3;
+}
+
+.options input {
+    margin-right: 10px;
+}
+
+/* ===== Buttons ===== */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.buttons button {
+    flex: 1;
+    padding: 12px;
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+}
+
+/* Previous */
+.buttons button:nth-child(1) {
+    background: #1085eb;
+}
+
+/* Next */
+.buttons button:nth-child(2) {
+    background: #acc1d7;
+}
+
+/* Submit */
+#submitBtn {
+    background: #00ef38;
+    display: none;
+}
+
+/* ===== Result Section ===== */
+#result {
+    margin-top: 30px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 14px;
+}
+
+/* Score (3 / 5) */
+#result h2 {
+    text-align: center;
+    color: #007777;
+    margin-bottom: 15px;
+}
+
+/* Question-wise result */
+#result p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+/* Divider */
+#result hr {
+    border: none;
+    height: 1px;
+    background: #ccc;
+    margin: 15px 0;
+}
+
+/* Correct / Incorrect text */
+#result span {
+    font-weight: bold;
+}
